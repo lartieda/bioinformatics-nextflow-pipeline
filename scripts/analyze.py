@@ -1,15 +1,12 @@
 import pandas as pd
 
 
-INPUT_FILE = "data/expression.csv"
+INPUT_FILE = "results/preprocessed_expression.csv"
 OUTPUT_FILE = "results/differential_expression.csv"
 
 
 def main():
     df = pd.read_csv(INPUT_FILE)
-
-    df["control_mean"] = df[["control_1", "control_2"]].mean(axis=1)
-    df["treated_mean"] = df[["treated_1", "treated_2"]].mean(axis=1)
 
     df["fold_change"] = df["treated_mean"] / df["control_mean"]
 
