@@ -1,5 +1,7 @@
 import pandas as pd
 
+from scripts.analyze import calculate_fold_change
+
 
 def test_fold_change_calculation():
     df = pd.DataFrame(
@@ -11,7 +13,7 @@ def test_fold_change_calculation():
         }
     )
 
-    df["fold_change"] = df["treated_mean"] / df["control_mean"]
+    result = calculate_fold_change(df)
 
-    assert df.loc[0, "fold_change"] == 2.0
-    assert df.loc[1, "fold_change"] == 0.5
+    assert result.loc[0, "fold_change"] == 2.0
+    assert result.loc[1, "fold_change"] == 0.5

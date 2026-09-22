@@ -5,10 +5,16 @@ INPUT_FILE = "preprocessed_expression.csv"
 OUTPUT_FILE = "differential_expression.csv"
 
 
+def calculate_fold_change(df):
+    df = df.copy()
+    df["fold_change"] = df["treated_mean"] / df["control_mean"]
+    return df
+
+
 def main():
     df = pd.read_csv(INPUT_FILE)
 
-    df["fold_change"] = df["treated_mean"] / df["control_mean"]
+    df = calculate_fold_change(df)
 
     results = df[
         [
