@@ -2,7 +2,7 @@ import pandas as pd
 
 
 INPUT_FILE = "preprocessed_expression.csv"
-OUTPUT_FILE = "differential_expression.csv"
+OUTPUT_FILE = "fold_change_results.csv"
 
 
 def calculate_fold_change(df):

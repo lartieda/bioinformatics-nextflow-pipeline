@@ -1,5 +1,7 @@
 process ANALYZE {
 
+    publishDir 'results', mode: 'copy'
+
     container 'bioinformatics-pipeline:latest'
 
     input:
@@ -7,7 +9,7 @@ process ANALYZE {
     path script_file
 
     output:
-    path "differential_expression.csv"
+    path "fold_change_results.csv"
 
     script:
     """
