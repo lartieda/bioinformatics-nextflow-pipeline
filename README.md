@@ -1,4 +1,3 @@
-````markdown
 # Reproducible Bioinformatics Pipeline
 
 A small, reproducible bioinformatics workflow built with **Nextflow, Python, Docker, and pytest**.
@@ -14,11 +13,11 @@ Raw expression data
    Preprocessing
         │
         ▼
-   Fold-change analysis
+Fold-change analysis
         │
         ▼
      Results
-````
+```
 
 ### Pipeline steps
 
@@ -123,6 +122,3 @@ The workflow separates:
 * generated results
 
 Docker provides a consistent Python environment, while Nextflow manages the execution of the workflow steps.
-
-```
-```
