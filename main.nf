@@ -1,38 +1,7 @@
 nextflow.enable.dsl=2
 
-process PREPROCESS {
-    container 'bioinformatics-pipeline:latest'
-
-    input:
-    path input_file
-    path script_file
-
-    output:
-    path "preprocessed_expression.csv"
-
-    script:
-    """
-    python ${script_file}
-    """
-}
-
-process ANALYZE {
-    container 'bioinformatics-pipeline:latest'
-
-    input:
-    path input_file
-    path script_file
-
-    output:
-    path "differential_expression.csv"
-
-    script:
-    """
-    mkdir -p results
-    cp ${input_file} results/preprocessed_expression.csv
-    python ${script_file}
-    """
-}
+include { PREPROCESS } from './modules/qc.nf'
+include { ANALYZE } from './modules/analysis.nf'
 
 workflow {
     input_file = file("data/expression.csv")
