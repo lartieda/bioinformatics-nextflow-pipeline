@@ -1,0 +1,18 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Nextflow
+.nextflow/
+.nextflow.log*
+work/
+nextflow
+get-nextflow.ps1
+
+# Results generated locally
+results/*
+!results/.gitkeep
+
+# IDE
+.vscode/
