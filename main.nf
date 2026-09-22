@@ -1,6 +1,6 @@
 nextflow.enable.dsl=2
 
-include { PREPROCESS } from './modules/qc.nf'
+include { PREPROCESS } from './modules/preprocessing.nf'
 include { ANALYZE } from './modules/analysis.nf'
 
 workflow {
