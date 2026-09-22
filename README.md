@@ -1,3 +1,4 @@
+````markdown
 # Reproducible Bioinformatics Pipeline
 
 A small, reproducible bioinformatics workflow built with **Nextflow, Python, Docker, and pytest**.
@@ -17,7 +18,7 @@ Raw expression data
         │
         ▼
      Results
-```
+````
 
 ### Pipeline steps
 
@@ -78,6 +79,12 @@ Run the Nextflow workflow:
 ./nextflow run main.nf
 ```
 
+The input file can also be specified explicitly:
+
+```bash
+./nextflow run main.nf --input data/expression.csv
+```
+
 The generated results are published to:
 
 ```text
@@ -116,3 +123,6 @@ The workflow separates:
 * generated results
 
 Docker provides a consistent Python environment, while Nextflow manages the execution of the workflow steps.
+
+```
+```
