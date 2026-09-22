@@ -1,8 +1,8 @@
 import pandas as pd
 
 
-INPUT_FILE = "data/expression.csv"
-OUTPUT_FILE = "results/preprocessed_expression.csv"
+INPUT_FILE = "expression.csv"
+OUTPUT_FILE = "preprocessed_expression.csv"
 
 
 def main():
