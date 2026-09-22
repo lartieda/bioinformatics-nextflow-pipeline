@@ -1,8 +1,8 @@
 import pandas as pd
 
 
-INPUT_FILE = "results/preprocessed_expression.csv"
-OUTPUT_FILE = "results/differential_expression.csv"
+INPUT_FILE = "preprocessed_expression.csv"
+OUTPUT_FILE = "differential_expression.csv"
 
 
 def main():
