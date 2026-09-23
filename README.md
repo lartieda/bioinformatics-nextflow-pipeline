@@ -1,5 +1,7 @@
 # Reproducible Bioinformatics Pipeline
 
+[![CI](https://github.com/lartieda/bioinformatics-nextflow-pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/lartieda/bioinformatics-nextflow-pipeline/actions/workflows/ci.yml)
+
 A small, reproducible bioinformatics workflow built with **Nextflow, Python, Docker, and pytest**.
 
 The pipeline processes a gene expression dataset, performs basic preprocessing, and calculates fold changes between control and treated samples.
