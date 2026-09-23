@@ -57,7 +57,23 @@ bioinformatics-nextflow-pipeline/
 └── requirements.txt
 ```
 
+## Example output
+
+The pipeline produces a ranked table of fold changes.
+
+| Gene | Control mean | Treated mean | Fold change |
+|------|--------------|--------------|-------------|
+| IL6  | 72.5         | 197.5        | 2.72        |
+| CDK2 | 147.5        | 287.5        | 1.95        |
+| TP53 | 127.5        | 217.5        | 1.71        |
+| STAT3 | 212.5        | 335.0        | 1.58        |
+| AKT1 | 255.0        | 397.5        | 1.56        |
+
+This output represents fold-change calculations only and does not include statistical significance testing.
+
 ## Technologies
+
+The pipeline produces a ranked table of fold changes.
 
 * **Nextflow** — workflow orchestration and reproducibility
 * **Python** — data processing and analysis
