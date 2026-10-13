@@ -140,3 +140,21 @@ The workflow separates:
 * generated results
 
 Docker provides a consistent Python environment, while Nextflow manages the execution of the workflow steps.
+
+
+## AWS S3 integration
+
+The pipeline includes an `aws_s3` Nextflow profile that validates a hybrid
+cloud execution pattern:
+
+- Input data is read from a private Amazon S3 bucket.
+- The workflow runs locally in Docker during this validation stage.
+- Results are published back to the private S3 bucket.
+- Credentials are kept outside the repository in an AWS CLI profile.
+- The IAM user follows least-privilege access to the required S3 prefixes.
+
+Run the S3 profile from a Linux or WSL environment:
+
+```bash
+AWS_PROFILE=nextflow-portfolio \
+nextflow run main.nf -profile aws_s3 -resume

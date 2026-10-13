@@ -1,6 +1,6 @@
 process ANALYZE {
 
-    publishDir 'results', mode: 'copy'
+    publishDir params.outdir, mode: 'copy', overwrite: true
 
     container 'bioinformatics-pipeline:latest'
 
