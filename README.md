@@ -158,3 +158,38 @@ Run the S3 profile from a Linux or WSL environment:
 ```bash
 AWS_PROFILE=nextflow-portfolio \
 nextflow run main.nf -profile aws_s3 -resume
+
+
+
+## Cloud execution
+
+The pipeline supports three execution profiles:
+
+| Profile | Purpose |
+|---|---|
+| `local` | Run the workflow locally with Docker. |
+| `aws_s3` | Run locally while reading inputs from and publishing outputs to private Amazon S3 storage. |
+| `aws_batch` | Execute pipeline processes as managed AWS Batch Fargate tasks. |
+
+The `aws_batch` profile uses:
+
+- Amazon S3 for private input data, work directories and published results.
+- Amazon ECR for a private, versioned pipeline image.
+- AWS Batch with Fargate for serverless container execution.
+- IAM task and execution roles with separate responsibilities.
+- Seqera Wave to resolve the private ECR image during Fargate execution.
+- Seqera Platform for run monitoring.
+
+The AWS Batch Fargate profile was successfully validated with the two-process
+workflow (`PREPROCESS` and `ANALYZE`) on 14 October 2026.
+
+```bash
+export AWS_PROFILE=nextflow-portfolio
+
+nextflow run main.nf -profile aws_batch -with-tower -resume
+```
+
+See the detailed cloud-execution documentation:
+
+- [AWS S3 execution profile](docs/aws-s3-execution.md)
+- [AWS Batch Fargate execution](docs/aws-batch-fargate-execution.md)

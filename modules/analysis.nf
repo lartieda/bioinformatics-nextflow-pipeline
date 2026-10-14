@@ -2,7 +2,7 @@ process ANALYZE {
 
     publishDir params.outdir, mode: 'copy', overwrite: true
 
-    container 'bioinformatics-pipeline:latest'
+    container params.container_image
 
     input:
     path input_file
